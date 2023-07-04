@@ -96,7 +96,7 @@ accelerate launch --num_processes 8 --mixed_precision fp16 train_t2i_custom_v2.p
 
 
 ## Gradio Demo
-Put the [style_adapter weights](https://huggingface.co/zideliu/StyleDrop/tree/main) in `./style_adapter` and run the following command will launch the demo:
+Put the [style_adapter weights](https://huggingface.co/zideliu/StyleDrop/tree/main) in `./style_adapter` folder and run the following command will launch the demo:
 
 ```shell
 python gradio_demo.py
