@@ -18,7 +18,7 @@ we release them to facilitate community research.
 
 ## Todo List
 - [x] Release the code.
-- [x] Add gradio demo.
+- [x] Add gradio inference demo.
 - [ ] Add iterative training (Round 2).
 
 ## Training & Inference
@@ -81,7 +81,7 @@ accelerate launch --num_processes 8 --mixed_precision fp16 train_t2i_custom_v2.p
 
 ## Inference
 
-The pretrained style_adapter weights can be download from [🤗 Hugging Face](https://huggingface.co/zideliu/StyleDrop/tree/main).
+The pretrained style_adapter weights can be downloaded from [🤗 Hugging Face](https://huggingface.co/zideliu/StyleDrop/tree/main).
 ```shell
 #!/bin/bash
 export EVAL_CKPT="assets/ckpts/cc3m-285000.ckpt" 
