@@ -21,7 +21,7 @@ we release them to facilitate community research.
 - [x] Add gradio inference demo.
 - [ ] Add iterative training (Round 2).
 
-## Training & Inference
+## Data & Weights Preparation
 First, download VQGAN from this [link](https://drive.google.com/file/d/13S_unB87n6KKuuMdyMnyExW0G1kplTbP/view) (from [MAGE](https://github.com/LTH14/mage), thanks!), and put the downloaded VQGAN in `assets/vqgan_jax_strongaug.ckpt`.
 
 Then, download the pre-trained checkpoints from this [link](https://huggingface.co/nzl-thu/MUSE/tree/main/assets/ckpts) to `assets/ckpts` for evaluation or to continue training for more iterations.
@@ -54,6 +54,8 @@ And the final directory structure is as follows:
 └── └── vqgan_jax_strongaug.ckpt
 
 ```
+
+
 ## Dependencies
 Same as [MUSE-PyTorch](https://github.com/baaivision/MUSE-Pytorch).
 ```
@@ -91,6 +93,15 @@ export OUTPUT_DIR="output/for/this/experiment"
 
 accelerate launch --num_processes 8 --mixed_precision fp16 train_t2i_custom_v2.py --config=configs/custom.py
 ```
+
+
+## Gradio Demo
+Put the [style_adapter weights](https://huggingface.co/zideliu/StyleDrop/tree/main) in `./style_adapter` and run the following command will launch the demo:
+
+```shell
+python gradio_demo.py
+```
+
 
 ## Acknowlegment
 
