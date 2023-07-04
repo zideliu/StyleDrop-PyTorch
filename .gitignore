@@ -1,0 +1,8 @@
+__pycache__
+*.ckpt
+*.npz
+wandb/
+*.ipynb
+.vscode/
+*style/
+*.sh

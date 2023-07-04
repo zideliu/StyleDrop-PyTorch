@@ -1,0 +1,22 @@
+{ 
+    "image_01_01.jpg":["A bay","in watercolor painting style"],
+    "image_01_02.jpg":["A house", "in watercolor painting style"],
+    "image_01_03.jpg":["A cat", "in watercolor painting style"],
+    "image_01_04.jpg":["Flowers", "in watercolor painting style"],
+    "image_01_05.jpg":["A village", "in oil painting style"],
+    "image_01_06.jpg":["A village", "in line drawing style"],
+    "image_01_07.jpg":["A portrait of a person", "in oil painting style"],
+    "image_01_08.jpg":["A portrait of a person wearing a hat", "in oil painting style"],
+    "image_02_01.jpg":["A person drwoning into th phone", "in cartoon line drawing style"],
+    "image_02_02.jpg":["A woman walking a dog", "in flat cartoon illustration style"],
+    "image_02_03.jpg":["A woman working on a laptop", "in flat cartoon illustration style"],
+    "image_02_04.jpg":["A Christmas tree", "in sticker style"],
+    "image_02_05.jpg":["A wave", "in abstract rainbow colored flowing smoke wave design"],
+    "image_02_06.jpg":["A mushroom", "in glowing style"],
+    "image_03_01.jpg":["Slice of watermelon and clouds in the background", "in 3d rendering style"],
+    "image_03_03.jpg":["A thumbs up", "in glowing 3d rendering style"],
+    "image_03_04.jpg":["A woman", "in 3d rendering style"],
+    "image_03_05.jpg":["A bear", "in kid crayon drawing style"],
+    "image_03_07.jpg":["A flower", "in melting golden 3d rendering style"],
+    "image_03_08.jpg":["A Viking face with beard", "in wooden sculpture"]
+}
