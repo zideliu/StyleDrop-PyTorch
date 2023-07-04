@@ -1,5 +1,5 @@
 # StyleDrop
-This is an unofficial PyTorch implementation of [StyleDrop](https://arxiv.org/abs/2306.00983).
+This is an unofficial PyTorch implementation of [StyleDrop: Text-to-Image Generation in Any Style](https://arxiv.org/abs/2306.00983).
 
 Unlike the parameters in the paper in (Round 1), we set $\lambda_A=2.0$, $\lambda_B=5.0$ and `d_prj=32`, `is_shared=False`, which we found work better, these hyperparameters can be seen in `configs/custom.py`.
 
@@ -100,6 +100,16 @@ Put the [style_adapter weights](https://huggingface.co/zideliu/StyleDrop/tree/ma
 
 ```shell
 python gradio_demo.py
+```
+
+## Citation
+```bibtex
+@article{sohn2023styledrop,
+  title={StyleDrop: Text-to-Image Generation in Any Style},
+  author={Sohn, Kihyuk and Ruiz, Nataniel and Lee, Kimin and Chin, Daniel Castro and Blok, Irina and Chang, Huiwen and Barber, Jarred and Jiang, Lu and Entis, Glenn and Li, Yuanzhen and others},
+  journal={arXiv preprint arXiv:2306.00983},
+  year={2023}
+}
 ```
 
 
