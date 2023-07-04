@@ -1,5 +1,5 @@
 # StyleDrop
-This is an unofficial PyTorch implementation of [StyleDrop](https://arxiv.org/abs/2306.00983)
+This is an unofficial PyTorch implementation of [StyleDrop](https://arxiv.org/abs/2306.00983).
 
 Unlike the parameters in the paper in (Round 1), we set $\lambda_A=2.0$, $\lambda_B=5.0$ and `d_prj=32`, `is_shared=False`, which we found work better, these hyperparameters can be seen in `configs/custom.py`.
 
@@ -81,7 +81,7 @@ accelerate launch --num_processes 8 --mixed_precision fp16 train_t2i_custom_v2.p
 
 ## Inference
 
-The pretrained style_adapter `.pth` can be download from this [🤗 Hugging Face](https://huggingface.co/zideliu/StyleDrop/tree/main)
+The pretrained style_adapter weights can be download from [🤗 Hugging Face](https://huggingface.co/zideliu/StyleDrop/tree/main).
 ```shell
 #!/bin/bash
 export EVAL_CKPT="assets/ckpts/cc3m-285000.ckpt" 
