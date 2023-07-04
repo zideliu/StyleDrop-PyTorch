@@ -1,5 +1,5 @@
 # StyleDrop
-This is a unofficial PyTorch implementation of [StyleDrop](https://arxiv.org/abs/2306.00983)
+This is an unofficial PyTorch implementation of [StyleDrop](https://arxiv.org/abs/2306.00983)
 
 Unlike the parameters in the paper in (Round 1), we set $\lambda_A=2.0$, $\lambda_B=5.0$ and `d_prj=32`, `is_shared=False`, which we found work better, these hyperparameters can be seen in `configs/custom.py`.
 
