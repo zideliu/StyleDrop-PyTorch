@@ -24,7 +24,7 @@ we release them to facilitate community research.
 ## Training & Inference
 First, download VQGAN from this [link](https://drive.google.com/file/d/13S_unB87n6KKuuMdyMnyExW0G1kplTbP/view) (from [MAGE](https://github.com/LTH14/mage), thanks!), and put the downloaded VQGAN in `assets/vqgan_jax_strongaug.ckpt`.
 
-Then,download the pre-trained checkpoints from this [link](https://huggingface.co/nzl-thu/MUSE/tree/main/assets/ckpts) to `assets/ckpts` for evaluation or to continue training for more iterations.
+Then, download the pre-trained checkpoints from this [link](https://huggingface.co/nzl-thu/MUSE/tree/main/assets/ckpts) to `assets/ckpts` for evaluation or to continue training for more iterations.
 
 finally, prepare empty_feature by runnig command `python extract_empty_feature.py`
 
@@ -81,7 +81,7 @@ accelerate launch --num_processes 8 --mixed_precision fp16 train_t2i_custom_v2.p
 
 ## Inference
 
-The pretrained style_adapter `.pth` can be download from this [Link](https://huggingface.co/zideliu/StyleDrop/tree/main)
+The pretrained style_adapter `.pth` can be download from this [🤗 Hugging Face](https://huggingface.co/zideliu/StyleDrop/tree/main)
 ```shell
 #!/bin/bash
 export EVAL_CKPT="assets/ckpts/cc3m-285000.ckpt" 
@@ -94,5 +94,5 @@ accelerate launch --num_processes 8 --mixed_precision fp16 train_t2i_custom_v2.p
 
 ## Acknowlegment
 
-* Implementation is based on [MUSE-PyTorch](https://github.com/baaivision/MUSE-Pytorch)
-* Many thanks for the generous help from [Zanlin](https://github.com/nzl-thu)
+* The implementation is based on [MUSE-PyTorch](https://github.com/baaivision/MUSE-Pytorch)
+* Many thanks for the generous help from [Zanlin Ni](https://github.com/nzl-thu)
