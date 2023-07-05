@@ -60,7 +60,7 @@ And the final directory structure is as follows:
 Same as [MUSE-PyTorch](https://github.com/baaivision/MUSE-Pytorch).
 ```
 conda install pytorch torchvision torchaudio cudatoolkit=11.3
-pip install accelerate==0.12.0 absl-py ml_collections einops wandb ftfy==6.1.1 transformers==4.23.1 loguru webdataset==0.2.5
+pip install accelerate==0.12.0 absl-py ml_collections einops wandb ftfy==6.1.1 transformers==4.23.1 loguru webdataset==0.2.5 gradio
 ```
 
 ## Train
