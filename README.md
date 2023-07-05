@@ -1,5 +1,5 @@
 # StyleDrop
-This is a unofficial PyTorch implementation of [StyleDrop](https://arxiv.org/abs/2306.00983)
+This is an unofficial PyTorch implementation of [StyleDrop: Text-to-Image Generation in Any Style](https://arxiv.org/abs/2306.00983).
 
 Unlike the parameters in the paper in (Round 1), we set $\lambda_A=2.0$, $\lambda_B=5.0$ and `d_prj=32`, `is_shared=False`, which we found work better, these hyperparameters can be seen in `configs/custom.py`.
 
@@ -18,13 +18,13 @@ we release them to facilitate community research.
 
 ## Todo List
 - [x] Release the code.
-- [x] Add gradio demo.
+- [x] Add gradio inference demo.
 - [ ] Add iterative training (Round 2).
 
-## Training & Inference
+## Data & Weights Preparation
 First, download VQGAN from this [link](https://drive.google.com/file/d/13S_unB87n6KKuuMdyMnyExW0G1kplTbP/view) (from [MAGE](https://github.com/LTH14/mage), thanks!), and put the downloaded VQGAN in `assets/vqgan_jax_strongaug.ckpt`.
 
-Then,download the pre-trained checkpoints from this [link](https://huggingface.co/nzl-thu/MUSE/tree/main/assets/ckpts) to `assets/ckpts` for evaluation or to continue training for more iterations.
+Then, download the pre-trained checkpoints from this [link](https://huggingface.co/nzl-thu/MUSE/tree/main/assets/ckpts) to `assets/ckpts` for evaluation or to continue training for more iterations.
 
 finally, prepare empty_feature by runnig command `python extract_empty_feature.py`
 
@@ -54,11 +54,13 @@ And the final directory structure is as follows:
 └── └── vqgan_jax_strongaug.ckpt
 
 ```
+
+
 ## Dependencies
 Same as [MUSE-PyTorch](https://github.com/baaivision/MUSE-Pytorch).
 ```
 conda install pytorch torchvision torchaudio cudatoolkit=11.3
-pip install accelerate==0.12.0 absl-py ml_collections einops wandb ftfy==6.1.1 transformers==4.23.1 loguru webdataset==0.2.5
+pip install accelerate==0.12.0 absl-py ml_collections einops wandb ftfy==6.1.1 transformers==4.23.1 loguru webdataset==0.2.5 gradio
 ```
 
 ## Train
@@ -81,7 +83,7 @@ accelerate launch --num_processes 8 --mixed_precision fp16 train_t2i_custom_v2.p
 
 ## Inference
 
-The pretrained style_adapter `.pth` can be download from this [Link](https://huggingface.co/zideliu/StyleDrop/tree/main)
+The pretrained style_adapter weights can be downloaded from [🤗 Hugging Face](https://huggingface.co/zideliu/StyleDrop/tree/main).
 ```shell
 #!/bin/bash
 export EVAL_CKPT="assets/ckpts/cc3m-285000.ckpt" 
@@ -92,7 +94,26 @@ export OUTPUT_DIR="output/for/this/experiment"
 accelerate launch --num_processes 8 --mixed_precision fp16 train_t2i_custom_v2.py --config=configs/custom.py
 ```
 
+
+## Gradio Demo
+Put the [style_adapter weights](https://huggingface.co/zideliu/StyleDrop/tree/main) in `./style_adapter` folder and run the following command will launch the demo:
+
+```shell
+python gradio_demo.py
+```
+
+## Citation
+```bibtex
+@article{sohn2023styledrop,
+  title={StyleDrop: Text-to-Image Generation in Any Style},
+  author={Sohn, Kihyuk and Ruiz, Nataniel and Lee, Kimin and Chin, Daniel Castro and Blok, Irina and Chang, Huiwen and Barber, Jarred and Jiang, Lu and Entis, Glenn and Li, Yuanzhen and others},
+  journal={arXiv preprint arXiv:2306.00983},
+  year={2023}
+}
+```
+
+
 ## Acknowlegment
 
-* Implementation is based on [MUSE-PyTorch](https://github.com/baaivision/MUSE-Pytorch)
-* Many thanks for the generous help from [Zanlin](https://github.com/nzl-thu)
+* The implementation is based on [MUSE-PyTorch](https://github.com/baaivision/MUSE-Pytorch)
+* Many thanks for the generous help from [Zanlin Ni](https://github.com/nzl-thu)
