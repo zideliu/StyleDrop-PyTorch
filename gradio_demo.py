@@ -13,6 +13,12 @@ import numpy as np
 from PIL import Image
 empty_context = np.load("assets/contexts/empty_context.npy")
 
+def set_seed(seed: int):
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
+    
 def d(**kwargs):
     """Helper of creating a config dict."""
     return ml_collections.ConfigDict(initial_dictionary=kwargs)
@@ -159,6 +165,7 @@ def process(prompt,num_samples,lambdaA,lambdaB,style,seed,sample_steps,image=Non
         seed = random.randint(0,65535)
     config.seed = seed
     print(f"seed: {seed}")
+    set_seed(config.seed)
     res = muse.generate(config,num_samples,cfg_nnet,decode,is_eval=True,context=text_embedding)
     print(res.shape)
     res = (res*255+0.5).clamp_(0,255).permute(0,2,3,1).to('cpu',torch.uint8).numpy()
@@ -170,7 +177,7 @@ def process(prompt,num_samples,lambdaA,lambdaB,style,seed,sample_steps,image=Non
 block = gr.Blocks()
 with block:
     with gr.Row():
-        gr.Markdown("## StyleDrop based on Muse")
+        gr.Markdown("## StyleDrop based on Muse (Inference Only) ")
     with gr.Row():
         with gr.Column():
             prompt = gr.Textbox(label="Prompt")
