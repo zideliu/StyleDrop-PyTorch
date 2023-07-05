@@ -1,4 +1,7 @@
 # StyleDrop
+
+[![Star History Chart](https://api.star-history.com/svg?repos=zideliu/StyleDrop-PyTorch&type=Date)](https://star-history.com/#zideliu/StyleDrop-PyTorch&Date)
+
 This is an unofficial PyTorch implementation of [StyleDrop: Text-to-Image Generation in Any Style](https://arxiv.org/abs/2306.00983).
 
 Unlike the parameters in the paper in (Round 1), we set $\lambda_A=2.0$, $\lambda_B=5.0$ and `d_prj=32`, `is_shared=False`, which we found work better, these hyperparameters can be seen in `configs/custom.py`.
@@ -117,3 +120,5 @@ python gradio_demo.py
 
 * The implementation is based on [MUSE-PyTorch](https://github.com/baaivision/MUSE-Pytorch)
 * Many thanks for the generous help from [Zanlin Ni](https://github.com/nzl-thu)
+
+
