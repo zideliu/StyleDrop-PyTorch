@@ -128,7 +128,7 @@ style_ref = {
     "0305":"style_adapter/0305.pth",
     }
 style_postfix ={
-    "None":None,
+    "None":"",
     "0102":" in watercolor painting style",
     "0103":" in watercolor painting style",
     "0106":" in line drawing style",
@@ -150,8 +150,8 @@ def process(prompt,num_samples,lambdaA,lambdaB,style,seed,sample_steps,image=Non
     if adapter_path is not None:
         nnet_ema.adapter.load_state_dict(torch.load(adapter_path))
     else:
-        config.sample.lambdaA=None,
-        config.sample.lambdaB=None,
+        config.sample.lambdaA=None
+        config.sample.lambdaB=None
     print("load adapter Done!")
     # Encode prompt
     prompt = prompt+adapter_postfix
