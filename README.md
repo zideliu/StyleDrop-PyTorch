@@ -117,8 +117,3 @@ python gradio_demo.py
 
 * The implementation is based on [MUSE-PyTorch](https://github.com/baaivision/MUSE-Pytorch)
 * Many thanks for the generous help from [Zanlin Ni](https://github.com/nzl-thu)
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=zideliu/StyleDrop-PyTorch&type=Date)](https://star-history.com/#zideliu/StyleDrop-PyTorch&Date)
-
