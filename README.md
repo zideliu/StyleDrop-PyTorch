@@ -1,5 +1,8 @@
 # StyleDrop
 
+<p align="left">
+  <a href="https://huggingface.co/spaces/zideliu/styledrop"><img alt="Huggingface" src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-StyleDrop-orange"></a>
+</p>
 
 
 This is an unofficial PyTorch implementation of [StyleDrop: Text-to-Image Generation in Any Style](https://arxiv.org/abs/2306.00983).
@@ -21,14 +24,12 @@ we release them to facilitate community research.
 <br/><br/>
 ![result5](img/5.png)
 
-## Web Demos
-<p align="left">
-  <a href="https://huggingface.co/spaces/zideliu/styledrop"><img alt="Huggingface" src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-StyleDrop-orange"></a>
-</p>
+## News
+- [07/06/2023] Online Gradio Demo is available [here](https://huggingface.co/spaces/zideliu/styledrop)
 
 ## Todo List
 - [x] Release the code.
-- [x] Add gradio inference demo.
+- [x] Add gradio inference demo (runs in local).
 - [ ] Add iterative training (Round 2).
 
 ## Data & Weights Preparation
