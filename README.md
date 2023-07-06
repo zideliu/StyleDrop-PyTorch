@@ -24,7 +24,8 @@ we release them to facilitate community research.
 
 ## Todo List
 - [x] Release the code.
-- [x] Add gradio inference demo.
+- [x] Online Gradio Demo is available [![Static Badge](https://img.shields.io/badge/%F0%9F%A4%97_Hugging_Face-StyleDrop-orange)](https://huggingface.co/spaces/zideliu/styledrop)
+.
 - [ ] Add iterative training (Round 2).
 
 ## Data & Weights Preparation
