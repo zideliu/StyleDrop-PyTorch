@@ -113,6 +113,8 @@ Put the [style_adapter weights](https://huggingface.co/zideliu/StyleDrop/tree/ma
 python gradio_demo.py
 ```
 
+The demo is also hosted on [HuggingFace](https://huggingface.co/spaces/zideliu/styledrop).
+
 ## Citation
 ```bibtex
 @article{sohn2023styledrop,
