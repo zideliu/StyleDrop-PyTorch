@@ -391,6 +391,7 @@ class VisionTransformer(nn.Module):
             ls_init_value=ls_init_value,
             act_layer=act_layer,
             norm_layer=norm_layer,
+            xattn=xops is not None
         )
 
         self.global_average_pool = global_average_pool
@@ -560,7 +561,7 @@ class TextTransformer(nn.Module):
             ls_init_value=ls_init_value,
             act_layer=act_layer,
             norm_layer=norm_layer,
-            xattn=xattn
+            xattn=xops is not None,
         )
 
         self.xattn = xattn
