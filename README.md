@@ -21,11 +21,14 @@ we release them to facilitate community research.
 <br/><br/>
 ![result5](img/5.png)
 
+## Web Demos
+<p align="left">
+  <a href="https://huggingface.co/spaces/zideliu/styledrop"><img alt="Huggingface" src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-StyleDrop-orange"></a>
+</p>
 
 ## Todo List
 - [x] Release the code.
-- [x] Online Gradio Demo is available [![Static Badge](https://img.shields.io/badge/%F0%9F%A4%97_Hugging_Face-StyleDrop-orange)](https://huggingface.co/spaces/zideliu/styledrop)
-.
+- [x] Add gradio inference demo.
 - [ ] Add iterative training (Round 2).
 
 ## Data & Weights Preparation
