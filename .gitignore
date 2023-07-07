@@ -2,7 +2,7 @@ __pycache__
 *.ckpt
 *.npz
 wandb/
-*.ipynb
+*.ipynb_checkpoints
 .vscode/
 *style/
 *.sh
