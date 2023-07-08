@@ -553,7 +553,7 @@ class TextTransformer(nn.Module):
         self.token_embedding = nn.Embedding(vocab_size, width)
         self.positional_embedding = nn.Parameter(torch.empty(self.num_pos, width))
 
-        xattn = (os.getenv('FLASH_TXT', 'f') == 't')
+        xattn = xops is not None
         self.transformer = Transformer(
             width=width,
             layers=layers,
@@ -561,7 +561,7 @@ class TextTransformer(nn.Module):
             ls_init_value=ls_init_value,
             act_layer=act_layer,
             norm_layer=norm_layer,
-            xattn=xops is not None,
+            xattn=xattn,
         )
 
         self.xattn = xattn
