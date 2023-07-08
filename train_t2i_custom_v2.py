@@ -277,7 +277,7 @@ def train(config):
             logging.info(f'Save checkpoint {train_state.step}...')
             if accelerator.local_process_index == 0:
                 train_state.save(os.path.join(config.ckpt_root, f'{train_state.step}.ckpt'),adapter_only=True)
-                if config.train.eval_interval:
+                if config.sample_interval:
                     eval_step(n_samples=config.sample.n_samples, sample_steps=config.sample.sample_steps) # type: ignore
         accelerator.wait_for_everyone()
 
