@@ -1,0 +1,19 @@
+# Configuration for Cog ⚙️
+# Reference: https://github.com/replicate/cog/blob/main/docs/yaml.md
+
+build:
+  gpu: true
+  cuda: "11.8"
+  python_version: "3.9"
+  python_packages:
+    - "torch==2.0.1"
+    - "torchvision==0.15.2"
+    - "loguru==0.7.0"
+    - "xformers==0.0.20"
+    - "ftfy==6.1.1"
+    - "einops==0.6.1"
+    - "ml-collections==0.1.1"
+    - "omegaconf==2.3.0"
+    - "transformers==4.23.1"
+    - "webdataset==0.2.5"
+predict: "predict.py:Predictor"
