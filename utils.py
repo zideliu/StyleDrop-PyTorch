@@ -300,7 +300,7 @@ class MetricLogger(object):
 
 
 def get_grad_norm_(parameters, norm_type: float = 2.0) -> torch.Tensor:
-    from torch._six import inf
+    from torch import inf
     if isinstance(parameters, torch.Tensor):
         parameters = [parameters]
     parameters = [p for p in parameters if p.grad is not None]
