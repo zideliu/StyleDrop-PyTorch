@@ -126,8 +126,8 @@ nnet_ema.to(device)
 style_ref = {
     "None": None,
     **{x: os.path.join("style_adapter", x, "adapter.pth") for x in style_adapters}
-    }
-style_postfix ={
+}
+style_postfix = {
     "None": "",
     **{x: f" in {x.replace('_', ' ')} style" for x in style_adapters}
 }
@@ -179,7 +179,7 @@ with block:
             run_button = gr.Button(label="Run")
             num_samples = gr.Slider(label="Images", minimum=1, maximum=12, value=1, step=1)
             seed = gr.Slider(label="Seed", minimum=-1, maximum=2147483647, step=1, value=1234)
-            style = gr.Radio(choices=["0102","0103","0106","0108","0305","None"],type="value",value="None",label="Style")
+            style = gr.Radio(choices=style_adapters+["None"], type="value",value="None",label="Style")
 
             with gr.Accordion("Advanced options",open=False):
                 lambdaA = gr.Slider(label="lambdaA", minimum=0.0, maximum=5.0, value=2.0, step=0.01)
