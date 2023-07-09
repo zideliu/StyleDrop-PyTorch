@@ -10,7 +10,7 @@ import random
 from libs.muse import MUSE
 import utils
 import numpy as np
-from PIL import Image
+from glob import glob
 empty_context = np.load("assets/contexts/empty_context.npy")
 
 def set_seed(seed: int):
@@ -96,6 +96,10 @@ def unprocess(x):
 config = get_config()
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
+style_adapters = glob("style_adapter/*/")
+
+style_adapters = [os.path.basename(os.path.dirname(x)) for x in style_adapters]
+
 # Load open_clip and vq model
 prompt_model,_,_ = open_clip.create_model_and_transforms('ViT-bigG-14', 'laion2b_s39b_b160k')
 prompt_model = prompt_model.to(device)
@@ -118,23 +122,14 @@ nnet_ema = train_state.nnet_ema
 nnet_ema.eval()
 nnet_ema.requires_grad_(False)
 nnet_ema.to(device)
+
 style_ref = {
-    "None":None,
-    "0102":"style_adapter/0102.pth",
-    "0103":"style_adapter/0103.pth",
-    "0106":"style_adapter/0106.pth",
-    "0108":"style_adapter/0108.pth",
-    "0301":"style_adapter/0301.pth",
-    "0305":"style_adapter/0305.pth",
+    "None": None,
+    **{x: os.path.join("style_adapter", x, "adapter.pth") for x in style_adapters}
     }
 style_postfix ={
-    "None":"",
-    "0102":" in watercolor painting style",
-    "0103":" in watercolor painting style",
-    "0106":" in line drawing style",
-    "0108":" in oil painting style",
-    "0301":" in 3d rendering style",
-    "0305":" in kid crayon drawing style",
+    "None": "",
+    **{x: f" in {x.replace('_', ' ')} style" for x in style_adapters}
 }
 def decode(_batch):
     return vq_model.decode_code(_batch)
