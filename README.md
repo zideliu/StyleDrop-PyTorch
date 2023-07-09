@@ -3,6 +3,7 @@
 <p align="left">
   <a href="https://huggingface.co/spaces/zideliu/styledrop"><img alt="Huggingface" src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-StyleDrop-orange"></a>
   <a href="https://replicate.com/cjwbw/styledrop"><img src="https://replicate.com/cjwbw/styledrop/badge"></a>
+  <a href="https://colab.research.google.com/github/neild0/StyleDrop-PyTorch-Interactive/blob/main/styledrop_colab.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg"></a>
 </p>
 
 
