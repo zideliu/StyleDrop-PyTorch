@@ -18,6 +18,8 @@ def main():
 
     print(latent.shape)
     c = latent[0].detach().cpu().float().numpy()
+    del model
+    del tokenizer
     save_dir = f'assets/contexts'
     os.makedirs(save_dir, exist_ok=True)
     np.save(os.path.join(save_dir, f'empty_context.npy'), c)

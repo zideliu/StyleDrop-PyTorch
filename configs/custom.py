@@ -22,7 +22,7 @@ def get_config():
     config.sample_interval=True
     config.train = d(
         n_steps=1000,
-        batch_size=4,
+        batch_size=8,
         log_interval=20,
         eval_interval=100,
         save_interval=100,
