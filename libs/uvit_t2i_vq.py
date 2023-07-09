@@ -17,10 +17,10 @@ try:
     import xformers
     import xformers.ops
 
-    XFORMERS_IS_AVAILBLE = True
+    XFORMERS_IS_AVAILABLE = True
     print("xformers available, will use xformers attention")
 except:
-    XFORMERS_IS_AVAILBLE = False
+    XFORMERS_IS_AVAILABLE = False
     print("xformers not available, will use pytorch attention instead")
 
 class BertEmbeddings(nn.Module):
@@ -94,7 +94,7 @@ class Attention(nn.Module):
 
     def forward(self, x):
         B, N, C = x.shape
-        if XFORMERS_IS_AVAILBLE:
+        if XFORMERS_IS_AVAILABLE:
             qkv = self.qkv(x)
             qkv = einops.rearrange(qkv, 'B L (K H D) -> K B L H D', K=3, H=self.num_heads)
             q, k, v = qkv[0], qkv[1], qkv[2]  # B L H D
