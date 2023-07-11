@@ -6,6 +6,7 @@
   <a href="https://colab.research.google.com/github/neild0/StyleDrop-PyTorch-Interactive/blob/main/styledrop_colab.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg"></a>
 </p>
 
+The code of StyleDrop-PyTorch has been moved to [**aim-uofa/StyleDrop-PyTorch**](https://github.com/aim-uofa/StyleDrop-PyTorch). Please try it and have fun!
 
 This is an unofficial PyTorch implementation of [StyleDrop: Text-to-Image Generation in Any Style](https://arxiv.org/abs/2306.00983).
 
@@ -27,6 +28,7 @@ we release them to facilitate community research.
 ![result5](img/5.png)
 
 ## News
+- [07/11/2023] The code of StyleDrop-PyTorch has been moved to [**aim-uofa/StyleDrop-PyTorch**](https://github.com/aim-uofa/StyleDrop-PyTorch). Please try it and have fun!
 - [07/06/2023] Online Gradio Demo is available [here](https://huggingface.co/spaces/zideliu/styledrop)
 
 ## Todo List
