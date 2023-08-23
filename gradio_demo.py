@@ -127,9 +127,18 @@ style_ref = {
     "None": None,
     **{x: os.path.join("style_adapter", x, "adapter.pth") for x in style_adapters}
 }
-style_postfix = {
-    "None": "",
-    **{x: f" in {x.replace('_', ' ')} style" for x in style_adapters}
+# style_postfix = {
+#     "None": "",
+#     **{x: f" in {x.replace('_', ' ')} style" for x in style_adapters}
+# }
+style_postfix ={
+    "None":"",
+    "0102":" in watercolor painting style",
+    "0103":" in watercolor painting style",
+    "0106":" in line drawing style",
+    "0108":" in oil painting style",
+    "0301":" in 3d rendering style",
+    "0305":" in kid crayon drawing style",
 }
 def decode(_batch):
     return vq_model.decode_code(_batch)
