@@ -133,7 +133,6 @@ style_adapters = [os.path.basename(x).split('.')[0] for x in style_adapters]
 #     "None": "",
 #     **{x: f" in {x.replace('_', ' ')} style" for x in style_adapters}
 # }
-style_adapters = glob
 style_ref = {
     "None":None,
     "0102":"style_adapter/0102.pth",
