@@ -103,8 +103,9 @@ class train_custom_dataset(Dataset):
         print(self.image[0])
         print("-----------------"*3)
     def __getitem__(self, index):
-        prompt = self.prompt[0]
-        image = Image.open(self.image[0]).convert("RGB")
+        index = index % len(self.image)
+        prompt = self.prompt[index]
+        image = Image.open(self.image[index]).convert("RGB")
         image = self.transform(image)
         
         return image,prompt
